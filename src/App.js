@@ -2,7 +2,7 @@ import "./App.css";
 import React from "react";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const displayReducer = (state = { display: "" }, action) => {
   if (action.type === "DISPLAY") {
@@ -100,7 +100,7 @@ class DrumButtons extends React.Component {
   }
 
   handleKeyPress(e) {
-    if (e.key == this.props.triggerKey) {
+    if (e.key === this.props.triggerKey) {
       this.handleAudio();
     }
   }
